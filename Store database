@@ -1,0 +1,20 @@
+This is a store database. All of the queries display information about items and price.
+
+SELECT item_name,price
+FROM superstore
+ORDER BY price
+;
+
+SELECT item_name,SUM(price)
+FROM superstore
+;
+
+SELECT category, SUM(price)
+FROM superstore
+ORDER BY item_name ='Kitchen Supplies'
+;
+
+SELECT category, MIN(price)
+FROM superstore 
+ORDER BY item_name, price
+; 
