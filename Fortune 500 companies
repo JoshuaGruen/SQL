@@ -1,0 +1,35 @@
+Here is some code for companies that displays multiple items.
+
+--Displays companies with paid time off days that have revenue of greater than 20 and healtcare benefits..
+SELECT paid_time_off_days
+FROM fortune_companies
+WHERE revenue > 20
+AND healthcare_benefits = 1
+;
+
+-- Displays company names where revenue is greater than or equal too 200 and have healthcare benefits.
+SELECT company_name
+FROM fortune_companies
+WHERE revenue >= 200
+AND healthcare_benefits=1
+;
+
+--Displays company names that do not have healthcare benefits and paid time off days is greater than or equal to 1.
+SELECT company_name
+FROM fortune_companies
+WHERE healthcare_benefits=0
+AND paid_time_off_days >= 1
+;
+
+-- Displays company names that match a name and have revenue greater than of equal to 100.
+SELECT company_name
+FROM fortune_companies
+WHERE company_name = 'Apple Inc.' 
+AND revenue >=100
+;
+
+--Displays companies that match company and are greater than or equal. 
+SELECT company_name
+FROM fortune_companies
+WHERE company_name >= 'Company'
+;
