@@ -1,4 +1,4 @@
-here are code that will display climate conference.
+this code that will display various climate conference.
 
 SELECT events.event_id,hotels.hotel_name
 FROM events
