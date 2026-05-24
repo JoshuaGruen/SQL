@@ -1,0 +1,27 @@
+here are code that will display climate conference.
+
+SELECT events.event_id,hotels.hotel_name
+FROM events
+JOIN hotels
+ON events.event_id=hotels.hotel_id
+;
+
+SELECT member_id
+FROM reservations
+LIMIT 5
+;
+
+SELECT vips.member_id,hotels.hotel_id
+FROM vips
+JOIN hotels
+ON vips.member_since
+LIMIT 5
+;
+
+SELECT reservations.hotel
+FROM reservations
+;
+
+SELECT *
+FROM hotels
+;
