@@ -46,3 +46,35 @@ AND length(orderid)=6
 AND orderid<>'OrderID'
 ;
 
+
+--Finds sales that happened in February
+SELECT location
+FROM BIT_DB.FebSales
+WHERE orderdate='02/18/19 01:35'
+;
+
+--Sum of orders 
+SELECT sum(quantity)
+FROM BIT_DB.FebSales
+WHERE orderdate like '02/18/19%'
+;
+
+--Finds orders in February between 13th and 18th
+SELECT orderdate
+From BIT_DB.FebSales
+WHERE orderdate between '02/13/19 00:00' AND '02/18/19 00:00'
+;
+
+--Order id that includes 16 and 0
+SELECT orderID
+FROM BIT_DB.MarSales
+WHERE orderID LIKE '16_0%'
+;
+
+--Orders that include symbols
+SELECT orderdate
+FROM BIT_DB.MarSales
+WHERE orderdate LIKE '%!_%'
+ESCAPE '!'
+;
+
