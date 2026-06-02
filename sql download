@@ -78,3 +78,40 @@ WHERE orderdate LIKE '%!_%'
 ESCAPE '!'
 ;
 
+--Shows how many products were sold
+SELECT sum (Product)
+FROM BIT_DB.FebSales
+WHERE Product LIKE '%headphones%'
+GROUP BY Product
+;
+
+--Shows the average price of products
+SELECT sum (Quantity*price)/count(cust.acctnum)
+FROM BIT_DB.FebSales feb
+LEFT JOIN BIT_DB.customers cust
+ON Feb.orderid=cust.order_id
+;
+
+--Average orders
+SELECT orderID
+FROM BIT_DB.AprSales
+WHERE orderdate LIKE '04/1%'
+AND location LIKE '%GA'
+GROUP BY orderID
+HAVING AVG (price) > 1000
+;
+
+--Sales that had same order
+SELECT location,orderID
+FROM BIT_DB.MaySales
+WHERE orderID LIKE '1943_5'
+ORDER BY orderID
+;
+
+--The produce revenue 
+SELECT product,sum(Quantity*Price)
+FROM BIT_DB.JanSales
+GROUP BY product
+ORDER BY sum(Quantity*Price) desc
+LIMIT 1
+;
